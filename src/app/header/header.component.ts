@@ -14,11 +14,17 @@ export class HeaderComponent implements OnInit {
     if (annyang) {
       // Let's define a command.
       const commands = {
-        'hello': () => { alert('Hello world!'); },
       'show me contact list': () => { this.zone.run(() => {
         this.router.navigate(['/contact-list']);
     });},
-      'show me daily report': () => { alert('opening daily report'); }
+    'show me contact create': () => { this.zone.run(() => {
+      this.router.navigate(['/contact-create']);
+  });},
+  'home': () => { this.zone.run(() => {
+    this.router.navigate(['/home']);
+});}
+
+
       };
     annyang.continuous = true;
       // Add our commands to annyang
