@@ -13,6 +13,16 @@ export class ContactCreateComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
+    let speech = new SpeechSynthesisUtterance();
+    let voices = speechSynthesis.getVoices();
+    speech.voice = voices[1];
+    //speech.lang = "en-IN";
+    speech.text = "Create your contact here";
+    speech.volume = 1;
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    speechSynthesis.speak(speech);
   }
 
   createContact(){

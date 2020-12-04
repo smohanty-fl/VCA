@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
       'show me contact list': () => { this.zone.run(() => {
         this.router.navigate(['/contact-list']);
     });},
-    'show me contact create': () => { this.zone.run(() => {
+    'create a contact': () => { this.zone.run(() => {
       this.router.navigate(['/contact-create']);
   });},
   'home': () => { this.zone.run(() => {

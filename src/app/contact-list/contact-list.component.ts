@@ -15,6 +15,16 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit() {
     this.contacts = this.dataService.getContacts();
+    let speech = new SpeechSynthesisUtterance();
+    let voices = speechSynthesis.getVoices();
+    speech.voice = voices[1];
+    //speech.lang = "en-IN";
+    speech.text = "Here is your contact list";
+    speech.volume = 1;
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    speechSynthesis.speak(speech);
   }
   public selectContact(contact){
     this.selectedContact = contact;
